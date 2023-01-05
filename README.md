@@ -14,7 +14,7 @@ The **AdminDbContext** has the Tenants table, where
 the information regarding each tenant will be on.
 
 The **PocDbContext** is the actual system context, where all
-the tables will be on (could bve separated in multiples DbContexts).
+the tables will be on (could be separated in multiples DbContexts).
 
 #### EF Migrations
 
@@ -28,6 +28,6 @@ To generate new migrations:
 #### MigrationService
 
 A console application responsable for querying the Tenants
-and applying the latests migrations for each one of them DataBases.
+and applying the latests migrations for each DB.
 
 
