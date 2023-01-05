@@ -20,6 +20,18 @@ public class AdminDbContext : DbContext
             builder.Property(t => t.Id).ValueGeneratedNever();
 
             builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
+
+            builder.HasData(
+                new Tenant
+                {
+                    Id = 1,
+                    Name = "Tenant-1"
+                },
+                new Tenant
+                {
+                    Id = 2,
+                    Name = "Tenant-2"
+                });
         });
     }
 }
