@@ -28,6 +28,6 @@ To generate new migrations:
 #### MigrationService
 
 A console application responsable for querying the Tenants
-and applying the latests migrations for each one of them DataBases.
+and applying the latests migrations for each DB.
 
 
