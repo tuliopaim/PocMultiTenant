@@ -7,11 +7,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{59945B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{89C7C45F-0671-47E8-A4B4-FFB704912A80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocMultiTenant.Api", "src\PocMultiTenant.Api\PocMultiTenant.Api.csproj", "{5ED71BA0-742A-4D67-9824-A4BC99A70466}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocMultiTenant.Api", "src\PocMultiTenant.Api\PocMultiTenant.Api.csproj", "{5ED71BA0-742A-4D67-9824-A4BC99A70466}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocMultiTenant.MigrationService", "src\PocMultiTenant.MigrationService\PocMultiTenant.MigrationService.csproj", "{68EBC371-5283-4A12-9DCB-C3D4C4CADF52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocMultiTenant.MigrationService", "src\PocMultiTenant.MigrationService\PocMultiTenant.MigrationService.csproj", "{68EBC371-5283-4A12-9DCB-C3D4C4CADF52}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{BBA98176-73E3-4B5D-B32B-B0D0840F286F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ABF88A0C-EC00-484D-BB86-7FA9F7BCCF70}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
