@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PocMultiTenant.Api.Domain.Entidades;
+using PocMultiTenant.Api.Domain.Entities;
 
 namespace PocMultiTenant.Api.Infrastructure;
 

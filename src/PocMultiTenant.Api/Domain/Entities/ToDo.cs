@@ -1,4 +1,4 @@
-﻿namespace PocMultiTenant.Api.Domain.Entidades;
+﻿namespace PocMultiTenant.Api.Domain.Entities;
 
 public class ToDo
 {

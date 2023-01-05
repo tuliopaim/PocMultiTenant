@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PocMultiTenant.Api.Domain.Entidades;
+using PocMultiTenant.Api.Domain.Entities;
 using PocMultiTenant.Api.Infrastructure;
 
 namespace PocMultiTenant.Api.Controllers;
