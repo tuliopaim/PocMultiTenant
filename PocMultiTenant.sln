@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{59945BC5-CD44-4F5D-BF4A-6BC8783012BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{89C7C45F-0671-47E8-A4B4-FFB704912A80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocMultiTenant.Api", "src\PocMultiTenant.Api\PocMultiTenant.Api.csproj", "{5ED71BA0-742A-4D67-9824-A4BC99A70466}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocMultiTenant.MigrationService", "src\PocMultiTenant.MigrationService\PocMultiTenant.MigrationService.csproj", "{68EBC371-5283-4A12-9DCB-C3D4C4CADF52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{BBA98176-73E3-4B5D-B32B-B0D0840F286F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5ED71BA0-742A-4D67-9824-A4BC99A70466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED71BA0-742A-4D67-9824-A4BC99A70466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED71BA0-742A-4D67-9824-A4BC99A70466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED71BA0-742A-4D67-9824-A4BC99A70466}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68EBC371-5283-4A12-9DCB-C3D4C4CADF52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68EBC371-5283-4A12-9DCB-C3D4C4CADF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68EBC371-5283-4A12-9DCB-C3D4C4CADF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68EBC371-5283-4A12-9DCB-C3D4C4CADF52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5ED71BA0-742A-4D67-9824-A4BC99A70466} = {89C7C45F-0671-47E8-A4B4-FFB704912A80}
+		{68EBC371-5283-4A12-9DCB-C3D4C4CADF52} = {BBA98176-73E3-4B5D-B32B-B0D0840F286F}
+		{BBA98176-73E3-4B5D-B32B-B0D0840F286F} = {89C7C45F-0671-47E8-A4B4-FFB704912A80}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C581193-BDF2-4AD6-9522-ABE938E538BF}
+	EndGlobalSection
+EndGlobal
