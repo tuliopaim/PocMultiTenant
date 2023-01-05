@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PocMultiTenant.Api.Core;
+using PocMultiTenant.Api.Configuration;
+using PocMultiTenant.Api.Infrastructure.Contexts;
 
-namespace PocMultiTenant.Api.Infrastructure;
+namespace PocMultiTenant.Api.Infrastructure.Extensions;
 
 public static class InfrastructureExtensions
 {
@@ -14,13 +15,18 @@ public static class InfrastructureExtensions
             var currentUser = provider.GetRequiredService<ICurrentUser>();
             var tenantId = currentUser.Tenant();
 
-            var connectionString = configuration.GetTenantConnectionString(tenantId);
-            var optionsBuilder = new DbContextOptionsBuilder<PocDbContext>();
-
-            optionsBuilder.UseNpgsql(connectionString);
-
-            return new PocDbContext(optionsBuilder.Options);
+            return configuration.BuildPocDbContext(tenantId);
         });
+    }
+
+    public static PocDbContext BuildPocDbContext(this IConfiguration configuration, int tenantId)
+    {
+        var connectionString = configuration.GetTenantConnectionString(tenantId);
+        var optionsBuilder = new DbContextOptionsBuilder<PocDbContext>();
+
+        optionsBuilder.UseNpgsql(connectionString);
+
+        return new PocDbContext(optionsBuilder.Options);
     }
 
     public static string GetTenantConnectionString(this IConfiguration configuration, int tenantId)
@@ -37,7 +43,7 @@ public static class InfrastructureExtensions
 
     public static IServiceCollection AddAdminDbContext(this IServiceCollection services, IConfiguration configuration)
     {
-        return services.AddDbContext<AdminDbContext>(opt => 
+        return services.AddDbContext<AdminDbContext>(opt =>
             opt.UseNpgsql(configuration.GetConnectionString("AdminConnection")));
     }
 }

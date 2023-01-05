@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using PocMultiTenant.Api.Infrastructure;
+using PocMultiTenant.Api.Infrastructure.Contexts;
+using PocMultiTenant.Api.Infrastructure.Extensions;
 
 namespace PocMultiTenant.MigrationService;
 
@@ -30,7 +31,7 @@ public class Migrator
             if (stoppingToken.IsCancellationRequested) return;
             try
             {
-                var pocDbContext = ObterPocDbContext(tenant.Id);
+                var pocDbContext = _configuration.BuildPocDbContext(tenant.Id);
 
                 await pocDbContext.Database.MigrateAsync(cancellationToken: stoppingToken);
 
@@ -48,15 +49,5 @@ public class Migrator
                     tenant.Name);
             }
         }
-    }
-
-    private PocDbContext ObterPocDbContext(int tenantId)
-    {
-        var connectionString = _configuration.GetTenantConnectionString(tenantId);
-        var optionsBuilder = new DbContextOptionsBuilder<PocDbContext>();
-
-        optionsBuilder.UseNpgsql(connectionString);
-
-        return new PocDbContext(optionsBuilder.Options);
     }
 }

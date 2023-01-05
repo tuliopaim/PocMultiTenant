@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PocMultiTenant.Api.Infrastructure;
+using PocMultiTenant.Api.Infrastructure.Extensions;
 using PocMultiTenant.MigrationService;
 
 var configuration = SetupConfiguration();
@@ -28,7 +28,6 @@ IServiceProvider SetupDependencyInjection()
     services.AddLogging();
     services.AddSingleton<IConfiguration>(_ => configuration);
 
-    services.AddPocDbContext(configuration);
     services.AddAdminDbContext(configuration);
 
     services.AddScoped<Migrator>();
