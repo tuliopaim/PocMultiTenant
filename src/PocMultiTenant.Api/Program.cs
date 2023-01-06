@@ -1,17 +1,15 @@
-using PocMultiTenant.Api.Core;
-using PocMultiTenant.Api.Infrastructure;
+using PocMultiTenant.Api.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services
+    .AddSwagger()
+    .AddJwtAuthentication(builder.Configuration)
+    .AddInfrastructure(builder.Configuration)
+    .AddCurrentUser();
+
 builder.Services.AddHttpContextAccessor();
-
-builder.Services.AddScoped<ICurrentUser, CurrentUser>();
-
-builder.Services.AddAdminDbContext(builder.Configuration);
-builder.Services.AddPocDbContext(builder.Configuration);
 
 var app = builder.Build();
 
@@ -20,6 +18,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseRouting();
 
 app.UseAuthorization();
 

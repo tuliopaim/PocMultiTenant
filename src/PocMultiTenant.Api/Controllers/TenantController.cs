@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PocMultiTenant.Api.Domain.Entities;
-using PocMultiTenant.Api.Infrastructure;
+using PocMultiTenant.Api.Infrastructure.Contexts;
 
 namespace PocMultiTenant.Api.Controllers;
 
 [ApiController]
+[Route("api/[controller]")]
 public class TenantController : ControllerBase
 {
     [HttpPost]
