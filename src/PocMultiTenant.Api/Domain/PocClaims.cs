@@ -1,4 +1,4 @@
-﻿namespace PocMultiTenant.Api.Core.Constants;
+﻿namespace PocMultiTenant.Api.Domain;
 
 public static class PocClaims
 {

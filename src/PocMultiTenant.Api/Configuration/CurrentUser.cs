@@ -1,7 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
-using PocMultiTenant.Api.Core.Constants;
+﻿using PocMultiTenant.Api.Domain;
 
-namespace PocMultiTenant.Api.Core;
+namespace PocMultiTenant.Api.Configuration;
+
+public interface ICurrentUser
+{
+    int Tenant();
+    int Id();
+}
 
 public class CurrentUser : ICurrentUser
 {

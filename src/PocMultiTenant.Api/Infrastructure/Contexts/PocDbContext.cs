@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PocMultiTenant.Api.Domain.Entities;
 
-namespace PocMultiTenant.Api.Infrastructure;
+namespace PocMultiTenant.Api.Infrastructure.Contexts;
 
 public class PocDbContext : DbContext
 {
